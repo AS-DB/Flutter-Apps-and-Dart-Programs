@@ -1,15 +1,18 @@
-//Dart Numbers
+//Dart Functions
 void main() {
-  //without mentioning the data type we can use dynamic data type
-  dynamic a1 = "aditya";
-  print(a1.length);
-
-  //String to Number according to their data type
-  var number2 = 21;
-  var b = number2.toDouble();
-  print(b);
-
-  //round
-  double k = 21.333;
-  print(k.round());
+  hello();
+  print(add(1, 2));
+  print(mul(2, 3));
 }
+
+//normal functions
+void hello() {
+  print("Hello");
+}
+
+int add(int a, int b) {
+  return a + b;
+}
+
+//arrow function
+int mul(int a, int b) => a * b;
