@@ -1,27 +1,37 @@
-//Dart looping
+//Class and Objects
 void main() {
-  //for loop
-  for (int i = 0; i < 10; i++) {
-    print("hello");
+  var c1 = new Car("v6");
+  print(c1.engine);
+
+  var c2 = new Car1("super");
+  print(c2.engine);
+
+  c1.start();
+  c1.stop();
+
+  c2.speed();
+  print(c2.engine);
+}
+
+//Defining class here
+class Car {
+  //constructor define
+  Car(this.engine);
+  String engine;
+
+  void start() {
+    print("Car started");
   }
 
-  //while
-  int i = 0;
-  while (i < 9) {
-    print("hello adi");
-    i++;
+  void stop() {
+    print("Car stopped");
   }
+}
 
-  //do-while
-  var i1 = 2;
-  do {
-    print("jo jo");
-    i1++;
-  } while (i1 < -1);
-
-  //iterate over list
-  List a1 = ['a', 'b', 'c', 'd'];
-  for (var c in a1) {
-    print(c);
+//inheritance
+class Car1 extends Car {
+  Car1(String engine) : super(engine);
+  void speed() {
+    print("Its to fast");
   }
 }
