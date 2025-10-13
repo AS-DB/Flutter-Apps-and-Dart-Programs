@@ -1,18 +1,24 @@
-//variables
-import 'dart:ffi';
+//Data types
 
 void main() {
-  //variable can declare with var,val,const,final
-  const a = "aditya";
-  print(a);
-  //variable can also can define in a way of datatype variable name
-  int a1 = 21;
-  print(a1);
-  //null safety
-  String? a2;
-  print(a2);
-  //late variable
-  late String name;
-  name = "aditya";
-  print(name);
+  //integer
+  int a = 1;
+  //double
+  double a1 = 2;
+  //String
+  String a3 = "Hello";
+  String a4 = "World";
+  String h = "$a3 $a4";
+  print(h);
+  //boolean
+  bool g = true;
+  print('$g $h');
+
+  //List
+  List list1 = ['A', 'B', 'C'];
+  print(list1[1]);
+
+  //Map
+  Map m1 = {"Firstname": "Aditya", "Lastname": "Das", "Age": 19};
+  print(m1);
 }
