@@ -1,26 +1,15 @@
-//Dart string
+//Dart Numbers
 void main() {
-  String firstname = "Aditya";
-  String lastname = "Das";
-  String fullname = firstname + lastname;
+  //without mentioning the data type we can use dynamic data type
+  dynamic a1 = "aditya";
+  print(a1.length);
 
-  print(fullname);
+  //String to Number according to their data type
+  var number2 = 21;
+  var b = number2.toDouble();
+  print(b);
 
-  //length
-  print(fullname.length);
-
-  //lower
-  print(fullname.toLowerCase());
-
-  //upper
-  print(fullname.toUpperCase());
-
-  //trim
-  print(firstname.trim());
-
-  //substring
-  print(fullname.substring(2, 7));
-
-  //split
-  print(fullname.split('a'));
+  //round
+  double k = 21.333;
+  print(k.round());
 }
