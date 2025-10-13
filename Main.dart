@@ -1,24 +1,26 @@
-//Data types
-
+//Dart string
 void main() {
-  //integer
-  int a = 1;
-  //double
-  double a1 = 2;
-  //String
-  String a3 = "Hello";
-  String a4 = "World";
-  String h = "$a3 $a4";
-  print(h);
-  //boolean
-  bool g = true;
-  print('$g $h');
+  String firstname = "Aditya";
+  String lastname = "Das";
+  String fullname = firstname + lastname;
 
-  //List
-  List list1 = ['A', 'B', 'C'];
-  print(list1[1]);
+  print(fullname);
 
-  //Map
-  Map m1 = {"Firstname": "Aditya", "Lastname": "Das", "Age": 19};
-  print(m1);
+  //length
+  print(fullname.length);
+
+  //lower
+  print(fullname.toLowerCase());
+
+  //upper
+  print(fullname.toUpperCase());
+
+  //trim
+  print(firstname.trim());
+
+  //substring
+  print(fullname.substring(2, 7));
+
+  //split
+  print(fullname.split('a'));
 }
