@@ -1,18 +1,26 @@
-//Dart Functions
+//Dart Decision Statement
 void main() {
-  hello();
-  print(add(1, 2));
-  print(mul(2, 3));
-}
+  //if-else
+  var num1 = 21;
+  var num2 = 31;
 
-//normal functions
-void hello() {
-  print("Hello");
-}
+  if (num1 > num2) {
+    print("$num1 is great");
+  } else if (num1 == num2) {
+    print("$num1 is equal to other num also");
+  } else {
+    print("$num2 is greater then other");
+  }
 
-int add(int a, int b) {
-  return a + b;
+  var day = "Sunday";
+  switch (day) {
+    case "Sunday":
+      print("Its the funny day");
+      break;
+    case "Monday":
+      print("Its not a funday");
+      break;
+    default:
+      print("No day is like exist");
+  }
 }
-
-//arrow function
-int mul(int a, int b) => a * b;
