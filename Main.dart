@@ -1,12 +1,13 @@
-//Dart future and async and await
-void main() async {
-  //futureFunction();
+//Dart null safety
+void main() {
+  //null safety used here
+  String? name;
+  print(name);
 
-  await futureFunction();
-  print("Hello");
+  Car a = new Car();
+  print(a!.car);
 }
 
-Future<void> futureFunction() async {
-  await Future.delayed(Duration(seconds: 5));
-  print("hello");
+class Car {
+  String car = "Tesla";
 }
