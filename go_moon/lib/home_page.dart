@@ -15,8 +15,13 @@ class HomePage extends StatelessWidget {
         child: Container(
           height: _deviceHeight,
           width: _deviceWidth,
-          child: _destinationDropDownWidget(),
           padding: EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [_pagetitle(), _destinationDropDownWidget()],
+          ),
         ),
       ),
     );
