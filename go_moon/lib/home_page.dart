@@ -15,7 +15,8 @@ class HomePage extends StatelessWidget {
         child: Container(
           height: _deviceHeight,
           width: _deviceWidth,
-          child: _pagetitle(),
+          child: _destinationDropDownWidget(),
+          padding: EdgeInsets.symmetric(horizontal: 16),
         ),
       ),
     );
@@ -40,6 +41,16 @@ class HomePage extends StatelessWidget {
           fit: BoxFit.fill,
         ),
       ),
+    );
+  }
+
+  Widget _destinationDropDownWidget() {
+    List<DropdownMenuItem<String>> _items =
+        ['James Web Station', 'Prenuer Station'].map((e) {
+          return DropdownMenuItem(child: Text(e), value: e);
+        }).toList();
+    return Container(
+      child: DropdownButton(items: _items, onChanged: (_) {}),
     );
   }
 }
