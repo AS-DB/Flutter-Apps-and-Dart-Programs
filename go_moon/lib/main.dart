@@ -12,9 +12,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "GoMoon",
-      /*theme: ThemeData(
-        scaffoldBackgroundColor: Color.fromRGBO(18, 211, 166, 0.6),
-      ),*/
+      theme: ThemeData(scaffoldBackgroundColor: Color.fromRGBO(0, 0, 0, 0.6)),
       home: HomePage(),
     );
   }
