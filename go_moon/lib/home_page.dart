@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  late double? _deviceHeight, _deviceWidth;
+
+  HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: SafeArea(child: _pagetitle()));
+    _deviceHeight = MediaQuery.of(context).size.height;
+    _deviceWidth = MediaQuery.of(context).size.width;
+
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          height: _deviceHeight,
+          width: _deviceWidth,
+          child: _pagetitle(),
+        ),
+      ),
+    );
   }
 
   Widget _pagetitle() {
