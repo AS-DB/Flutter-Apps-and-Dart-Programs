@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_moon/home_page.dart';
 
 void main() {
   runApp(App());
@@ -11,10 +12,10 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "GoMoon",
-      theme: ThemeData(
+      /*theme: ThemeData(
         scaffoldBackgroundColor: Color.fromRGBO(18, 211, 166, 0.6),
-      ),
-      home: Scaffold(),
+      ),*/
+      home: HomePage(),
     );
   }
 }
