@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_moon/widgets/custom_dropdown_button.dart';
 
 class HomePage extends StatelessWidget {
-  late double? _deviceHeight, _deviceWidth;
+  late double _deviceHeight, _deviceWidth;
 
   HomePage({Key? key}) : super(key: key);
 
@@ -15,12 +16,16 @@ class HomePage extends StatelessWidget {
         child: Container(
           height: _deviceHeight,
           width: _deviceWidth,
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [_pagetitle(), _destinationDropDownWidget()],
+            children: [
+              _pagetitle(),
+              _destinationDropDownWidget(),
+              _travellerInfoWiget(),
+            ],
           ),
         ),
       ),
@@ -50,24 +55,16 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _destinationDropDownWidget() {
-    List<String> _items = ['James Web Station', 'Prenuer Station'];
-    return Container(
-      //padding: EdgeInsets.symmetric(horizontal: _deviceWidth*0.05),
+    return CustomDropdownButtonClass(
+      values: ['James Web Station', 'Prenuer Station'],
       width: _deviceWidth,
-      decoration: BoxDecoration(
-        color: const Color.fromRGBO(53, 53, 53, 1),
-        borderRadius: BorderRadius.circular(10),
-      ),
+    );
+  }
 
-      child: DropdownButton<String>(
-        items: _items.map((e) {
-          return DropdownMenuItem<String>(child: Text(e), value: e);
-        }).toList(),
-        underline: Container(),
-        dropdownColor: Color.fromRGBO(255, 255, 255, 1),
-        style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),
-        onChanged: (_) {},
-      ),
+  Widget _travellerInfoWiget() {
+    return CustomDropdownButtonClass(
+      values: ['1', '2', '3', '4'],
+      width: _deviceWidth,
     );
   }
 }
