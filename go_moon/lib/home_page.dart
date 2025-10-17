@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [_pagetitle(), _destinationDropDownWidget()],
           ),
         ),
@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
     return const Text(
       "#GOMoon",
       style: TextStyle(
-        color: Color.fromARGB(255, 239, 224, 224),
+        color: Color.fromARGB(255, 255, 235, 235),
         fontSize: 70,
         fontWeight: FontWeight.w800,
       ),
@@ -50,12 +50,24 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _destinationDropDownWidget() {
-    List<DropdownMenuItem<String>> _items =
-        ['James Web Station', 'Prenuer Station'].map((e) {
-          return DropdownMenuItem(child: Text(e), value: e);
-        }).toList();
+    List<String> _items = ['James Web Station', 'Prenuer Station'];
     return Container(
-      child: DropdownButton(items: _items, onChanged: (_) {}),
+      //padding: EdgeInsets.symmetric(horizontal: _deviceWidth*0.05),
+      width: _deviceWidth,
+      decoration: BoxDecoration(
+        color: const Color.fromRGBO(53, 53, 53, 1),
+        borderRadius: BorderRadius.circular(10),
+      ),
+
+      child: DropdownButton<String>(
+        items: _items.map((e) {
+          return DropdownMenuItem<String>(child: Text(e), value: e);
+        }).toList(),
+        underline: Container(),
+        dropdownColor: Color.fromRGBO(255, 255, 255, 1),
+        style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),
+        onChanged: (_) {},
+      ),
     );
   }
 }
