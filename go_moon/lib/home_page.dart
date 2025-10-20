@@ -17,11 +17,19 @@ class HomePage extends StatelessWidget {
           height: _deviceHeight,
           width: _deviceWidth,
           padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [_pagetitle(), _bookRideWidget(), _rideButton()],
+          child: Stack(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [_pagetitle(), _bookRideWidget(), _rideButton()],
+              ),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: _astroImageWidget(),
+              ),
+            ],
           ),
         ),
       ),
@@ -41,6 +49,8 @@ class HomePage extends StatelessWidget {
 
   Widget _astroImageWidget() {
     return Container(
+      width: _deviceWidth * 0.25,
+      height: _deviceHeight * 0.25,
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/images/Rengoku.png"),
