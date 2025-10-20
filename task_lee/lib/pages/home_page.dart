@@ -12,6 +12,8 @@ class _HomePageState extends State<HomePage> {
 
   late double _deviceHeight, _deviceWidth;
 
+  String? _newTaskContent;
+
   @override
   Widget build(BuildContext context) {
     _deviceHeight = MediaQuery.of(context).size.height;
@@ -44,6 +46,28 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _addTaskButton() {
-    return FloatingActionButton(onPressed: () {}, child: Icon(Icons.add));
+    return FloatingActionButton(
+      onPressed: _displayTaskPopup,
+      child: Icon(Icons.add),
+    );
+  }
+
+  void _displayTaskPopup() {
+    showDialog(
+      context: context,
+      builder: (BuildContext _context) {
+        return AlertDialog(
+          title: Text("Add New Task"),
+          content: TextField(
+            onSubmitted: (_value) {},
+            onChanged: (_value) {
+              setState(() {
+                _newTaskContent = _value;
+              });
+            },
+          ),
+        );
+      },
+    );
   }
 }
