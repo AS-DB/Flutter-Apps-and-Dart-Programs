@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [_pagetitle(), _bookRideWidget()],
+            children: [_pagetitle(), _bookRideWidget(), _rideButton()],
           ),
         ),
       ),
@@ -83,6 +83,21 @@ class HomePage extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [_destinationDropDownWidget(), _travellerInfoWiget()],
+      ),
+    );
+  }
+
+  Widget _rideButton() {
+    return Container(
+      margin: EdgeInsets.only(bottom: _deviceHeight * 0.01),
+      width: _deviceWidth,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: MaterialButton(
+        onPressed: () {},
+        child: Text("Book Ride!", style: TextStyle(color: Colors.black)),
       ),
     );
   }

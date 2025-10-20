@@ -22,7 +22,7 @@ class CustomDropdownButtonClass extends StatelessWidget {
           return DropdownMenuItem<String>(child: Text(e), value: e);
         }).toList(),
         //underline: Container(),
-        dropdownColor: Color.fromRGBO(255, 255, 255, 1),
+        dropdownColor: Color.fromRGBO(234, 234, 234, 1),
         style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),
         onChanged: (_) {},
       ),
