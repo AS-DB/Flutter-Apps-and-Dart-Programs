@@ -98,7 +98,20 @@ class _HomePageState extends State<HomePage> {
         return AlertDialog(
           title: Text("Add New Task"),
           content: TextField(
-            onSubmitted: (_value) {},
+            onSubmitted: (_) {
+              if (_newTaskContent != null) {
+                var _task = Task(
+                  content: _newTaskContent!,
+                  timestamp: DateTime.now(),
+                  done: false,
+                );
+                _box!.add(_task.toMap());
+                setState(() {
+                  _newTaskContent = null;
+                  Navigator.pop(context);
+                });
+              }
+            },
             onChanged: (_value) {
               setState(() {
                 _newTaskContent = _value;
