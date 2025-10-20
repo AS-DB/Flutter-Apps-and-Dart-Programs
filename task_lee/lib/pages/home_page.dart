@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
         title: Text("Taskly", style: TextStyle(fontSize: 15)),
       ),
       body: _taskList(),
+      floatingActionButton: _addTaskButton(),
     );
   }
 
@@ -40,5 +41,9 @@ class _HomePageState extends State<HomePage> {
         ),
       ],
     );
+  }
+
+  Widget _addTaskButton() {
+    return FloatingActionButton(onPressed: () {}, child: Icon(Icons.add));
   }
 }
